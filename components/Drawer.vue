@@ -23,9 +23,10 @@
       <line class="line3" x1="3" y1="17" x2="21" y2="17" />
     </svg>
   </div>
+
   <div v-show="drawerOpen" class="overlay" @click="toggleDrawer"></div>
 
-  <div class="drawer" :class="{ open: drawerOpen }">
+  <div v-show="drawerOpen" class="drawer">
     <nav>
       <NuxtLink :to="'/'">Реализованные проекты</NuxtLink>
       <NuxtLink :to="'/news'">Новости</NuxtLink>
@@ -114,7 +115,7 @@ watch(drawerOpen, (isOpen) => {
 }
 
 .drawer {
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -124,9 +125,8 @@ watch(drawerOpen, (isOpen) => {
   background: $color-primary;
   width: 65%;
   z-index: 99;
-  transform: translateX(100%);
-  transition: transform 0.2s ease-in-out;
   padding: 80px 20px 20px 20px;
+  transition: transform 0.2s ease-in-out;
 
   nav {
     display: flex;
@@ -137,7 +137,6 @@ watch(drawerOpen, (isOpen) => {
       text-decoration: none;
       color: #fff;
       margin: 3% 0;
-
       font-family: $font-secondary;
       font-weight: 400;
       font-size: 18px;
@@ -162,7 +161,6 @@ watch(drawerOpen, (isOpen) => {
       margin: 3% 0;
       display: flex;
       align-items: center;
-
       font-family: $font-primary;
       font-weight: 400;
       font-size: 14px;
@@ -206,10 +204,6 @@ watch(drawerOpen, (isOpen) => {
       margin-right: 10px;
     }
   }
-}
-
-.drawer.open {
-  transform: translateX(0%);
 }
 
 .overlay {

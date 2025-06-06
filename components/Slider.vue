@@ -151,10 +151,6 @@ $breakpoint-lg: 768px;
     &--right {
       right: 20px;
     }
-
-    @media screen and (max-width: $breakpoint-lg) {
-      display: none;
-    }
   }
 
   .dots {
@@ -164,10 +160,6 @@ $breakpoint-lg: 768px;
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
-
-    @media screen and (max-width: $breakpoint-lg) {
-      display: none;
-    }
 
     .dot {
       width: 12px;
@@ -197,7 +189,7 @@ $breakpoint-lg: 768px;
   left: 40px;
   max-width: 60%;
   z-index: 5;
-  color: #000000; 
+  color: #000000;
   text-align: left;
 
   h2 {
